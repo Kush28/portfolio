@@ -14,7 +14,20 @@
 
 /* Your own custom utilities */
 
-a{
-    color: blueviolet;
-    text-decoration: underline;
+body { background: white; color: black; }
+
+@media (prefers-color-scheme: light) {
+  body { background: white; color: black; }
 }
+
+@media (prefers-color-scheme: dark) {
+  body { background: black; color: white; }
+}
+
+a {
+  color: cornflowerblue;
+}
+a:hover {
+  text-decoration: underline;
+}
+

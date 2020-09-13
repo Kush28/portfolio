@@ -10,6 +10,10 @@ module.exports = {
       },
     },
     extend: {
+      screens: {
+        light: { raw: '(prefers-color-scheme: light)' },
+        dark: { raw: '(prefers-color-scheme: dark)' },
+      },
       colors: {},
       spacing: {},
       letterSpacing: {},
@@ -20,5 +24,21 @@ module.exports = {
         medium: '0 8px 30px rgba(0, 0, 0, 0.12)',
       },
     },
+    plugins: [
+      function ({ addBase, config }) {
+        addBase({
+          body: {
+            color: config('theme.colors.black'),
+            backgroundColor: config('theme.colors.white'),
+          },
+          '@screen dark': {
+            body: {
+              color: config('theme.colors.white'),
+              backgroundColor: config('theme.colors.black'),
+            },
+          },
+        })
+      },
+    ],
   },
 }
