@@ -13,3 +13,8 @@
 /* Stop purging. */
 
 /* Your own custom utilities */
+
+a{
+    color: blueviolet;
+    text-decoration: underline;
+}
