@@ -1,7 +1,7 @@
 import React from 'react'
 import { FaAngular, FaCss3Alt, FaHtml5, FaNodeJs, FaReact } from 'react-icons/fa'
 import { ImHtmlFive2 } from 'react-icons/im'
-import ProgressBar from './ProgressBar'
+import ProgressBar from '../ProgressBar/ProgressBar'
 
 function getSkillDetails(skill) {
   switch (skill) {
