@@ -10,7 +10,7 @@ export default function Index() {
           I am a javascript enthusiast and Web is my playground.
         </h2>
         <p className="mb-4">
-          I am an experienced full stack developer working in the service industry for more than 2
+          I am an experienced full stack developer working in the service industry for 3
           years. By this time I can confidently say I know the ins and outs of building commercial
           websites and web experiences.
         </p>
