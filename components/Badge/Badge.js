@@ -1,6 +1,7 @@
 import React from 'react'
 import { FaAngular, FaCss3Alt, FaHtml5, FaNodeJs, FaReact } from 'react-icons/fa'
 import { ImHtmlFive2 } from 'react-icons/im'
+import { SiNextDotJs } from 'react-icons/si'
 import ProgressBar from '../ProgressBar/ProgressBar'
 
 function getSkillDetails(skill) {
@@ -39,6 +40,13 @@ function getSkillDetails(skill) {
         color: 'bg-secondary',
         progress: 85,
         icon: <FaCss3Alt size="2em" />,
+      }
+    case 'nextjs':
+      return {
+        label: 'NextJS',
+        color: 'bg-gray',
+        progress: 95,
+        icon: <SiNextDotJs size="2em" />,
       }
     default:
       return {

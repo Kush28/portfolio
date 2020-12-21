@@ -27,12 +27,6 @@
   src: url(/assets/fonts/roboto-mono-bold.woff2) format('woff2');
 }
 
-a {
-  color: cornflowerblue;
-}
-a:hover {
-  text-decoration: underline;
-}
 
 body {
   font-family: 'Roboto Mono';

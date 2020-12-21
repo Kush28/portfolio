@@ -5,7 +5,7 @@ export default function Layout({ children }) {
   return (
     <div className="flex relative">
       <div className='w-full md:w-8/12 container my-default'>
-        <header className="flex flex-row text-4xl font-bold">
+        <header className="flex flex-row text-4xl font-bold mb-default">
           <h1>kushalm.</h1>
         </header>
         <main>{children}</main>
