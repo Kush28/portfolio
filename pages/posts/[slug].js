@@ -7,7 +7,7 @@ export default function Post({ post, morePosts, preview }) {
   const { title, content, coverImage, excerpt } = post
   return (
     <div>
-      <Meta />
+      <Meta title={title} description={excerpt} ogImage={coverImage} />
       <h1 className="text-2xl md:text-3xl mb-paragraph">{title}</h1>
       <p className="mb-paragraph italic">{excerpt}</p>
       <div className="mb-paragraph flex justify-center">
