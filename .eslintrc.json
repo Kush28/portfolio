@@ -5,7 +5,11 @@
   "globals": {
     "window": true,
     "localStorage": true,
-    "sessionStorage": true
+    "sessionStorage": true,
+    "document": true
+  },
+  "env": {
+    "jest": true
   },
   "rules": {
     "prettier/prettier": [
@@ -14,10 +18,15 @@
         "endOfLine": "auto"
       }
     ],
+    "camelcase": "off",
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "react/prop-types": 0,
     "react/jsx-props-no-spreading": "off",
     "import/prefer-default-export": "off",
-    "react/jsx-wrap-multilines": "off"
+    "react/jsx-wrap-multilines": "off",
+    "react/no-danger": "off",
+    "no-underscore-dangle": ["error", { "allow": ["__STATE__"] }],
+    "jsx-a11y/anchor-is-valid": "off",
+    "react/jsx-one-expression-per-line": "off"
   }
 }

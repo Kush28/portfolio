@@ -13,21 +13,30 @@
 /* Stop purging. */
 
 /* Your own custom utilities */
-
-body { background: white; color: black; }
-
-@media (prefers-color-scheme: light) {
-  body { background: white; color: black; }
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(/assets/fonts/roboto-mono.woff2) format('woff2');
 }
 
-@media (prefers-color-scheme: dark) {
-  body { background: black; color: white; }
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url(/assets/fonts/roboto-mono-bold.woff2) format('woff2');
 }
 
-a {
-  color: cornflowerblue;
-}
-a:hover {
-  text-decoration: underline;
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/assets/fonts/roboto-mono-italics.woff2) format('woff2');
 }
 
+body {
+  font-family: 'Roboto Mono';
+}

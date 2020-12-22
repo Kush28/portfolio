@@ -3,19 +3,33 @@ module.exports = {
   theme: {
     container: {
       padding: {
-        default: '1rem',
-        sm: '2rem',
-        lg: '10rem',
-        xl: '15rem',
+        DEFAULT: '2rem',
+        sm: '4rem',
+        md: '4rem',
+        lg: '4rem',
+        xl: '6rem',
       },
     },
     extend: {
-      screens: {
-        light: { raw: '(prefers-color-scheme: light)' },
-        dark: { raw: '(prefers-color-scheme: dark)' },
+      screens: {},
+      colors: {
+        primary: '#83ED6E',
+        secondary: '#E85F5C',
+        alternate: '#9CFFFA',
+        black: '#000',
+        gray: '#343633',
+        lightgray: '#ECECEC',
+        'gray-100': 'rgba(52, 54, 51, 0.3)',
       },
-      colors: {},
-      spacing: {},
+      spacing: {
+        default: '3.5rem',
+        paragraph: '1.5rem',
+        item: '0.625rem',
+        avatar: '75px',
+        200: '200px',
+        100: '100px',
+        300: '300px',
+      },
       letterSpacing: {},
       lineHeight: {},
       fontSize: {},
@@ -23,22 +37,11 @@ module.exports = {
         small: '0 5px 10px rgba(0, 0, 0, 0.12)',
         medium: '0 8px 30px rgba(0, 0, 0, 0.12)',
       },
-    },
-    plugins: [
-      function ({ addBase, config }) {
-        addBase({
-          body: {
-            color: config('theme.colors.black'),
-            backgroundColor: config('theme.colors.white'),
-          },
-          '@screen dark': {
-            body: {
-              color: config('theme.colors.white'),
-              backgroundColor: config('theme.colors.black'),
-            },
-          },
-        })
+      minHeight: {
+        200: '200px',
+        100: '100px',
       },
-    ],
+    },
+    plugins: [],
   },
 }

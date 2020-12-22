@@ -1,14 +1,13 @@
 ---
-title: 'Dynamic Routing and Static Generation'
-excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus.'
-coverImage: '/assets/blog/dynamic-routing/cover.jpg'
-date: '2020-03-16T05:35:07.322Z'
-author:
-  name: JJ Kasper
-  picture: '/assets/blog/authors/jj.jpeg'
+title: '10 pointers for a clean code'
+excerpt: 'Code quality is as essential as having a software which is functional. Here are 10 simple
+  things you can do to make your code clean as a whistle.'
+coverImage: 'https://res.cloudinary.com/doxldod5y/image/upload/v1608581639/portfolio/posts/writing-quality-code/image-blog-what-code-quality_sw7ipk.jpg'
+date: '2020-12-22T08:34:41.960Z'
 ogImage:
-  url: '/assets/blog/dynamic-routing/cover.jpg'
+  url: 'https://res.cloudinary.com/doxldod5y/image/upload/v1608581639/portfolio/posts/writing-quality-code/image-blog-what-code-quality_sw7ipk.jpg'
 ---
+
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus. Praesent elementum facilisis leo vel fringilla. Congue mauris rhoncus aenean vel. Egestas sed tempus urna et pharetra pharetra massa massa ultricies.
 

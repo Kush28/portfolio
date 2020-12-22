@@ -1,3 +1,4 @@
+import React from 'react'
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 
 export default class MyDocument extends Document {
@@ -5,7 +6,7 @@ export default class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-          <script async src="https://www.googletagmanager.com/gtag/js?id=G-79ZVK589MQ"></script>
+          {/* <script async src="https://www.googletagmanager.com/gtag/js?id=G-79ZVK589MQ"></script>
           <script
             dangerouslySetInnerHTML={{
               __html: `
@@ -16,7 +17,7 @@ export default class MyDocument extends Document {
             gtag('config', 'G-79ZVK589MQ');
           `,
             }}
-          />
+          /> */}
         </Head>
         <body>
           <Main />
