@@ -1,5 +1,5 @@
-import { getAllPosts } from '../../lib/api'
 import Link from 'next/link'
+import { getAllPosts } from '../../lib/api'
 
 export default function Posts({ allPosts }) {
   return (

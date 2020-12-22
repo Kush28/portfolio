@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaAngular, FaCss3Alt, FaHtml5, FaNodeJs, FaReact } from 'react-icons/fa'
+import { FaAngular, FaCss3Alt, FaNodeJs, FaReact } from 'react-icons/fa'
 import { ImHtmlFive2 } from 'react-icons/im'
 import { SiNextDotJs } from 'react-icons/si'
 import ProgressBar from '../ProgressBar/ProgressBar'

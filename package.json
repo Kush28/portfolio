@@ -6,8 +6,8 @@
     "build": "next build",
     "export": "next build && next export",
     "start": "next start",
-    "lint": "eslint */**.js",
-    "lint:fix": "eslint */**/**.js --fix"
+    "lint": "eslint pages/**/*.js components/**/*.js lib/**/*.js",
+    "lint:fix": "eslint pages/**/*.js components/**/*.js lib/**/*.js --fix"
   },
   "dependencies": {
     "classnames": "2.2.6",
@@ -33,6 +33,7 @@
     "eslint-plugin-react-hooks": "^2.5.0",
     "postcss": "^8.2.1",
     "postcss-preset-env": "^6.7.0",
+    "prettier": "^2.2.1",
     "tailwindcss": "^2.0.2"
   },
   "license": "MIT"

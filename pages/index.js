@@ -4,8 +4,12 @@ import Meta from '../components/Meta/Meta'
 
 export default function Index() {
   return (
-    <div>
+    <div className="mt-8">
       <Meta />
+      <div className="mb-8">
+        <p className="text-xl mb-2">Hi there!</p>
+        <p className="text-sm ">Welcome to my world. Here are some interesting things for you.</p>
+      </div>
       <div className="mb-default">
         <Card variant="featured" />
       </div>

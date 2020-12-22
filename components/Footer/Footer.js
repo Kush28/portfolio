@@ -7,10 +7,15 @@ export default function Footer() {
       <a className="mx-5" href="mailto:kushal.m@yahoo.com">
         <FiMail />
       </a>
-      <a className="mx-5" href="https://twitter.com/Kush_all7" target="_blank">
+      <a className="mx-5" href="https://twitter.com/Kush_all7" target="_blank" rel="noreferrer">
         <FiTwitter />
       </a>
-      <a className="mx-5" href="https://www.linkedin.com/in/kushal-mukherjee/" target="_blank">
+      <a
+        className="mx-5"
+        href="https://www.linkedin.com/in/kushal-mukherjee/"
+        target="_blank"
+        rel="noreferrer"
+      >
         <FiLinkedin />
       </a>
     </footer>

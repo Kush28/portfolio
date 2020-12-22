@@ -19,6 +19,7 @@ module.exports = {
         black: '#000',
         gray: '#343633',
         lightgray: '#ECECEC',
+        'gray-100': 'rgba(52, 54, 51, 0.3)',
       },
       spacing: {
         default: '3.5rem',
