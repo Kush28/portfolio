@@ -1,6 +1,6 @@
 module.exports = {
   default: {
-    wrapper: 'max-h-200',
+    wrapper: '',
     imgWrapper: 'h-100 md:h-200 min-h-100',
     img: 'h-full w-full object-cover rounded-md',
     contentWrapper: 'pt-paragraph',
@@ -9,8 +9,8 @@ module.exports = {
     arrow: 'arrow',
   },
   featured: {
-    wrapper: 'flex max-h-300',
-    imgWrapper: 'min-h-100 sm:min-h-200 w-1/2 h-200 sm:h-auto',
+    wrapper: 'flex',
+    imgWrapper: 'min-h-100 sm:min-h-200 w-1/2 h-200 sm:h-auto max-h-300',
     img: 'h-full w-auto object-cover rounded-md',
     contentWrapper: 'w-1/2 px-paragraph',
     title: 'text-xl md:text-2xl mb-paragraph',

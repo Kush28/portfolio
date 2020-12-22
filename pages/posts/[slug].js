@@ -1,15 +1,20 @@
-import Link from 'next/link'
 import React from 'react'
+import Meta from '../../components/Meta/Meta'
 import { getPostBySlug, getAllPosts } from '../../lib/api'
 import markdownToHtml from '../../lib/markdownToHtml'
 
 export default function Post({ post, morePosts, preview }) {
-  const { title, content } = post
+  const { title, content, coverImage, excerpt } = post
   return (
     <div>
-      <Link href="/">Go to home</Link>
-      <h1>{title}</h1>
-      <div dangerouslySetInnerHTML={{ __html: content }} />
+      <Meta />
+      <h1 className="text-2xl md:text-3xl mb-paragraph">{title}</h1>
+      <p className="mb-paragraph italic">{excerpt}</p>
+      <div className="mb-paragraph flex justify-center">
+        <img src={coverImage} alt={title} className="h-400 w-full object-cover" />
+      </div>
+      {/* <div dangerouslySetInnerHTML={{ __html: content }} /> */}
+      <div className="w-full text-center">Coming soon</div>
     </div>
   )
 }
@@ -17,9 +22,8 @@ export default function Post({ post, morePosts, preview }) {
 export async function getStaticProps({ params }) {
   const post = getPostBySlug(params.slug, [
     'title',
+    'excerpt',
     'date',
-    'slug',
-    'author',
     'content',
     'ogImage',
     'coverImage',
