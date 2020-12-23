@@ -13,30 +13,23 @@
 /* Stop purging. */
 
 /* Your own custom utilities */
-@font-face {
-  font-family: 'Roboto Mono';
-  font-style: normal;
-  font-display: swap;
-  font-weight: 400;
-  src: url(/assets/fonts/roboto-mono.woff2) format('woff2');
-}
 
-@font-face {
-  font-family: 'Roboto Mono';
-  font-style: normal;
-  font-display: swap;
-  font-weight: 700;
-  src: url(/assets/fonts/roboto-mono-bold.woff2) format('woff2');
-}
-
-@font-face {
-  font-family: 'Roboto Mono';
-  font-style: italic;
-  font-weight: 400;
-  font-display: swap;
-  src: url(/assets/fonts/roboto-mono-italics.woff2) format('woff2');
-}
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700|Lora|Playfair+Display:700i,900');
 
 body {
-  font-family: 'Roboto Mono';
+  font-family: 'Lora';
 }
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: 'Lato', sans-serif;
+}
+
+p {
+  font-family: 'Lato', sans-serif;
+}
+
+@import 'post.css';

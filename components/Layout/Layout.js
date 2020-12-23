@@ -7,7 +7,7 @@ export default function Layout({ children }) {
   return (
     <div className="flex relative h-full">
       <div className="w-full md:w-8/12 container my-default">
-        <header className="flex flex-row justify-between mb-8">
+        <header className="flex flex-row justify-between mb-6">
           <Button to="/" className="text-2xl md:text-4xl font-bold text-gray">
             kushalm.
           </Button>
