@@ -19,8 +19,8 @@ export default function Post({ post, morePosts, preview }) {
       <div className="mb-paragraph flex justify-center">
         <img src={coverImage} alt={title} className="h-400 w-full object-cover" />
       </div>
-      <div className="markdown-body" dangerouslySetInnerHTML={{ __html: content }} />
-      {/* <div className="w-full text-center">Coming soon</div> */}
+      {/* <div className="markdown-body" dangerouslySetInnerHTML={{ __html: content }} /> */}
+      <div className="w-full text-center">Coming soon</div>
     </div>
   )
 }

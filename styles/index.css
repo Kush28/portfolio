@@ -18,6 +18,8 @@
 
 body {
   font-family: 'Lora';
+  max-width: 2200px;
+  margin: auto;
 }
 
 h1,
