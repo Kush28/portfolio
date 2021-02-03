@@ -1,11 +1,12 @@
 ---
-title: 'Learn How to Pre-render Pages Using Static Generation with Next.js'
-excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus.'
-coverImage: 'https://res.cloudinary.com/doxldod5y/image/upload/v1608626523/portfolio/posts/test/optimizing-static-pages-nextjs-prisma_lajxks.jpg'
-date: '2020-03-16T05:35:07.322Z'
+title: 'WTF is "this"'
+excerpt: 'The keyword "this" is Javascript can get very tricky very quickly. Let us get "this" off our heads once and for all.'
+coverImage: 'https://res.cloudinary.com/doxldod5y/image/upload/v1612336724/portfolio/posts/wtf-is-this/dgahV0czTwWJuwa9RcTE__E2_80_9CWhy_20_E2_80_98This_E2_80_99_20in_20JavaScript_E2_80_9D2x.png_jf7qgd.jpg'
+date: '2021-02-03T07:22:52.529Z'
 ogImage:
-  url: 'https://res.cloudinary.com/doxldod5y/image/upload/v1608626523/portfolio/posts/test/optimizing-static-pages-nextjs-prisma_lajxks.jpg'
+  url: 'https://res.cloudinary.com/doxldod5y/image/upload/v1612336724/portfolio/posts/wtf-is-this/dgahV0czTwWJuwa9RcTE__E2_80_9CWhy_20_E2_80_98This_E2_80_99_20in_20JavaScript_E2_80_9D2x.png_jf7qgd.jpg'
 ---
+
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus. Praesent elementum facilisis leo vel fringilla. Congue mauris rhoncus aenean vel. Egestas sed tempus urna et pharetra pharetra massa massa ultricies.
 

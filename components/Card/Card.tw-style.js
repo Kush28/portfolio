@@ -10,11 +10,11 @@ module.exports = {
   },
   featured: {
     wrapper: 'flex',
-    imgWrapper: 'min-h-100 sm:min-h-200 w-1/2 h-200 sm:h-auto max-h-300',
-    img: 'h-full w-auto object-cover rounded-md',
+    imgWrapper: 'min-h-200 w-1/2 h-auto max-h-300 overflow-hidden rounded-md',
+    img: 'h-full w-auto object-cover transition duration-500 ease-in-out',
     contentWrapper: 'w-1/2 px-paragraph',
     title: 'text-xl md:text-2xl mb-paragraph',
-    text: 'text mb-paragraph hidden sm:block',
-    arrow: 'arrow',
+    text: 'text mb-paragraph text-sm md:text-base',
+    arrow: 'arrow transition-all duration-100 ease-in-out',
   },
 }
