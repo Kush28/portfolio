@@ -8,9 +8,9 @@ export default function MobileNav() {
   const [isOpen, setOpen] = useState(false)
   useEffect(() => {
     if (isOpen) {
-      document.getElementById('__next').style.height = `${
-        document.getElementById('side-nav').clientHeight + 200
-      }px`
+      const docHeight = document.body.scrollHeight
+      const navHeight = document.getElementById('side-nav').clientHeight + 200
+      if (docHeight < navHeight) document.getElementById('__next').style.height = `${navHeight}px`
     } else document.getElementById('__next').style.height = 'auto'
   }, [isOpen])
   return (
