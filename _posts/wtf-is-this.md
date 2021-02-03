@@ -6,188 +6,149 @@ date: '2021-02-03T07:22:52.529Z'
 ogImage:
   url: 'https://res.cloudinary.com/doxldod5y/image/upload/v1612336724/portfolio/posts/wtf-is-this/dgahV0czTwWJuwa9RcTE__E2_80_9CWhy_20_E2_80_98This_E2_80_99_20in_20JavaScript_E2_80_9D2x.png_jf7qgd.jpg'
 ---
-## Dillinger
-
-[![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)
-
-[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
-
-Dillinger is a cloud-enabled, mobile-ready, offline-storage, AngularJS powered HTML5 Markdown editor.
-
-  - Type some Markdown on the left
-  - See HTML in the right
-  - Magic
-
-## New Features!
-
-  - Import a HTML file and watch it magically convert to Markdown
-  - Drag and drop images (requires your Dropbox account be linked)
+## Understanding context and `this`
 
 
-You can also:
-  - Import and save files from GitHub, Dropbox, Google Drive and One Drive
-  - Drag and drop markdown and HTML files into Dillinger
-  - Export documents as Markdown, HTML and PDF
+The value of the keyword `this` in Javascript refers to the [context](/posts/js-context) in which a function is invoked.
 
-Markdown is a lightweight markup language based on the formatting conventions that people naturally use in email.  As [John Gruber] writes on the [Markdown site][df1]
+There are 4 ways Javascript allows you to bind context to a function,
+- __Implicit Binding__
+- __Explicit Binding__
+- __'new' Binding__
+- __window Binding__
 
-> The overriding design goal for Markdown's
-> formatting syntax is to make it as readable
-> as possible. The idea is that a
-> Markdown-formatted document should be
-> publishable as-is, as plain text, without
-> looking like it's been marked up with tags
-> or formatting instructions.
+## Implicit Binding
 
-This text you see here is *actually* written in Markdown! To get a feel for Markdown's syntax, type some text into the left window and watch the results in the right.
+Implicit binding occurs when dot notation is used to invoke a function.
 
-### Tech
+```
+var obj = {
+  name: "Dave",
+  sayName: function () {
+    console.log(this.name);
+  },
+};
 
-Dillinger uses a number of open source projects to work properly:
+obj.sayName() // OUTPUT => "Dave"
+```
+Let's try to find the context in which the function `sayName()` is executed.
 
-* [AngularJS] - HTML enhanced for web apps!
-* [Ace Editor] - awesome web-based text editor
-* [markdown-it] - Markdown parser done right. Fast and easy to extend.
-* [Twitter Bootstrap] - great UI boilerplate for modern web apps
-* [node.js] - evented I/O for the backend
-* [Express] - fast node.js network app framework [@tjholowaychuk]
-* [Gulp] - the streaming build system
-* [Breakdance](https://breakdance.github.io/breakdance/) - HTML to Markdown converter
-* [jQuery] - duh
-
-And of course Dillinger itself is open source with a [public repository][dill]
- on GitHub.
-
-### Installation
-
-Dillinger requires [Node.js](https://nodejs.org/) v4+ to run.
-
-Install the dependencies and devDependencies and start the server.
-
-```sh
-$ cd dillinger
-$ npm install -d
-$ node app
+The easiest way to do that is to __check if the function invocation is preceded by a dot (.)__. If __yes__, then the value of `this` inside the function `sayName()` is equal to the object before the dot. Which is `obj`.
+so,
+```
+this = obj
+obj.name => 'Dave'
 ```
 
-For production environments...
+## Explicit Binding
 
-```sh
-$ npm install --production
-$ NODE_ENV=production node app
+Explicit binding is achieved by the methods `call`, `apply`, and `bind`.
+
+### call(), apply()
+
+[The official docs for call()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call) say: The call() method calls a function with a given this value and arguments provided individually.
+
+What that means, is that we can call any function, and explicitly specify what this should reference within the calling function. This can definitely save us from writing hacky code.
+
+For example,
+
+```
+function sayName(lang1, lang2) {
+  console.log("My name is ", this.name);
+  console.log("I know ", lang1, lang2);
+}
+
+var dave = {
+  name: "Dave",
+  age: 25,
+};
+
+sayName.call(dave, 'JS', 'Python') // 1st argument is the context in which the function will be executed, Next are arguments sent to the function call
+```
+Output
+```
+My name is Dave
+I know JS Python
 ```
 
-### Plugins
+`call()` and `apply()` serve the __exact same purpose__. The only difference between how they work is that `call()` expects all parameters to be passed in individually, whereas `apply()` expects an array of all of our parameters. 
 
-Dillinger is currently extended with the following plugins. Instructions on how to use them in your own application are linked below.
+For example, both produces the same output,  
 
-| Plugin | README |
-| ------ | ------ |
-| Dropbox | [plugins/dropbox/README.md][PlDb] |
-| GitHub | [plugins/github/README.md][PlGh] |
-| Google Drive | [plugins/googledrive/README.md][PlGd] |
-| OneDrive | [plugins/onedrive/README.md][PlOd] |
-| Medium | [plugins/medium/README.md][PlMe] |
-| Google Analytics | [plugins/googleanalytics/README.md][PlGa] |
+```
+sayName.call(dave, 'JS', 'Python')
+sayName.apply(dave, ['JS', 'Python'])
 
-| TABLE |
-| -- |
-| <code>alert</code> |
+```
+### bind()
 
+[The official docs for bind()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Function/bind) says: The bind() method creates a new function that, when called, has its this keyword set to the provided value, with a given sequence of arguments preceding any provided when the new function is called.
 
-### Development
+The difference between `call()`, `apply()` and `bind()` is that the `bind()` method,
 
-Want to contribute? Great!
+- Does not executes the function when it is called, instead it returns a new function which can be executed later.
+- Does not accepts additional parameters.
 
-Dillinger uses Gulp + Webpack for fast developing.
-Make a change in your file and instantaneously see your updates!
+For example the below code produces the same output as the above example.
 
-Open your favorite Terminal and run these commands.
-
-First Tab:
-```sh
-$ node app
+```
+var sayDavesName = sayName.bind(dave)
+sayDavesName('JS', 'Python')
 ```
 
-Second Tab:
-```sh
-$ gulp watch
+## 'new' Binding
+
+When a function is invoked with a `new` keyword the `this` keyword inside that function is bound to a new Object which is constructed.
+
+```
+var Animal = function (name){
+  this.name = name
+}
+
+var tiger = new Animal('tiger')
 ```
 
-(optional) Third:
-```sh
-$ karma test
-```
-#### Building for source
-For production release:
-```sh
-$ gulp build --prod
-```
-Generating pre-built zip archives for distribution:
-```sh
-$ gulp build dist --prod
-```
-### Docker
-Dillinger is very easy to install and deploy in a Docker container.
+Value of `this` inside the `Animal` function is equal to the new `tiger` object (which is of Animal type) which is created.
 
-By default, the Docker will expose port 8080, so change this within the Dockerfile if necessary. When ready, simply use the Dockerfile to build the image.
+## 'window' Binding
 
-```sh
-cd dillinger
-docker build -t joemccann/dillinger:${package.json.version} .
+When a function invocation is,
+- Not preceded by a dot.
+- Dont have call, apply, bind.
+- Not invoked by new keyword
+
+`this` will by default refer to the global object, `window`.
+
+*However in __strict mode__ `this` will be `undefined`.*
+
 ```
-This will create the dillinger image and pull in the necessary dependencies. Be sure to swap out `${package.json.version}` with the actual version of Dillinger.
+function sayName(){
+  console.log(this.name)
+}
 
-Once done, run the Docker image and map the port to whatever you wish on your host. In this example, we simply map port 8000 of the host to port 8080 of the Docker (or whatever port was exposed in the Dockerfile):
+sayName() // OUTPUT => undefined
 
-```sh
-docker run -d -p 8000:8080 --restart="always" <youruser>/dillinger:${package.json.version}
+window.name = 'Dave'
+sayName() // OUTPUT => 'Dave'
 ```
 
-Verify the deployment by navigating to your server address in your preferred browser.
+Another example,
+```
+var obj = {
+  name: "Dave",
+  sayName: function () {
+    console.log(this.name);
+  },
+};
 
-```sh
-127.0.0.1:8000
+var fun = obj.sayName
+fun() // OUTPUT => undefined , as this = window
+
 ```
 
-#### Kubernetes + Google Cloud
+### Phew! 😌
 
-See [KUBERNETES.md](https://github.com/joemccann/dillinger/blob/master/KUBERNETES.md)
+Simple right? Dont go too far. Stick with me for the fun part in the next article,
+[Arrow functions and 'This'(the fun begins)](/posts/this-and-arrow)
 
-
-### Todos
-
- - Write MORE Tests
- - Add Night Mode
-
-License
-----
-
-MIT
-
-
-**Free Software, Hell Yeah!**
-
-[//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
-
-
-   [dill]: <https://github.com/joemccann/dillinger>
-   [git-repo-url]: <https://github.com/joemccann/dillinger.git>
-   [john gruber]: <http://daringfireball.net>
-   [df1]: <http://daringfireball.net/projects/markdown/>
-   [markdown-it]: <https://github.com/markdown-it/markdown-it>
-   [Ace Editor]: <http://ace.ajax.org>
-   [node.js]: <http://nodejs.org>
-   [Twitter Bootstrap]: <http://twitter.github.com/bootstrap/>
-   [jQuery]: <http://jquery.com>
-   [@tjholowaychuk]: <http://twitter.com/tjholowaychuk>
-   [express]: <http://expressjs.com>
-   [AngularJS]: <http://angularjs.org>
-   [Gulp]: <http://gulpjs.com>
-
-   [PlDb]: <https://github.com/joemccann/dillinger/tree/master/plugins/dropbox/README.md>
-   [PlGh]: <https://github.com/joemccann/dillinger/tree/master/plugins/github/README.md>
-   [PlGd]: <https://github.com/joemccann/dillinger/tree/master/plugins/googledrive/README.md>
-   [PlOd]: <https://github.com/joemccann/dillinger/tree/master/plugins/onedrive/README.md>
-   [PlMe]: <https://github.com/joemccann/dillinger/tree/master/plugins/medium/README.md>
-   [PlGa]: <https://github.com/RahulHP/dillinger/blob/master/plugins/googleanalytics/README.md>
+![](https://res.cloudinary.com/doxldod5y/image/upload/v1612348882/portfolio/posts/wtf-is-this/giphy_wfab4t.webp)

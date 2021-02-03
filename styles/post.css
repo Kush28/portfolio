@@ -96,6 +96,7 @@
 
 .markdown-body img {
   border-style: none;
+  margin: auto;
 }
 
 .markdown-body code,
