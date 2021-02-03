@@ -1,0 +1,8 @@
+.cardWrapper:hover {
+  img {
+    transform: scale(1.01);
+  }
+  .title {
+    text-decoration: underline;
+  }
+}

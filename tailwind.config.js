@@ -1,5 +1,9 @@
 module.exports = {
-  purge: ['./components/**/*.js', './pages/**/*.js'],
+  purge: {
+    enabled: true,
+    content: ['./components/**/*.js', './pages/**/*.js'],
+    whitelistPatterns: [/markdown-body$/],
+  },
   theme: {
     container: {
       padding: {

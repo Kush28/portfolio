@@ -7,7 +7,7 @@ export default function Index({ allPosts }) {
   const featuredPost = allPosts[0]
 
   return (
-    <div>
+    <div className="mt-2">
       <Meta />
       <div className="mb-8">
         <h1>
