@@ -19,9 +19,9 @@ export default function MobileNav() {
         <HiOutlineMenuAlt1 size="1.5em" />
       </Button>
       {isOpen && (
-        <div className="h-full absolute top-0 bottom-0 right-0 bg-gray-100 flex justify-end shadow-lg">
-          <Button className="w-1/4" onClick={() => setOpen(false)} />
-          <div className="bg-white w-3/4 px-8 py-default">
+        <div className="h-full absolute left-0 top-0 bottom-0 right-0 bg-gray-100 flex justify-end shadow-lg">
+          <Button className="w-1/4 md:w-2/4" onClick={() => setOpen(false)} />
+          <div className="bg-white w-3/4 md:w-2/4 px-8 py-default">
             <SideNav />
           </div>
         </div>

@@ -21,8 +21,9 @@ export default function SideNav() {
           do.
         </p>
       </div>
-      <div>
+      <div className="grid grid-cols-2">
         <Badge skill="react" />
+        <Badge skill="redux" />
         <Badge skill="nextjs" />
         <Badge skill="angular" />
         <Badge skill="node" />

@@ -24,6 +24,7 @@ module.exports = {
         gray: '#343633',
         lightgray: '#ECECEC',
         'gray-100': 'rgba(52, 54, 51, 0.3)',
+        violet: '#8E44AD',
       },
       spacing: {
         default: '3.5rem',
