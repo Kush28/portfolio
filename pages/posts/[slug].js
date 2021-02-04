@@ -1,15 +1,47 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Button from '@/components/Button/Button'
 import Meta from '@/components/Meta/Meta'
 import { HiOutlineArrowNarrowLeft } from 'react-icons/hi'
+import Head from 'next/head'
 import { getPostBySlug, getAllPosts } from '../../lib/api'
 import markdownToHtml from '../../lib/markdownToHtml'
 
 export default function Post({ post, morePosts, preview }) {
-  const { title, content, coverImage, excerpt } = post
+  const { title, content, coverImage, excerpt, published } = post
+
+  function injectRunkit() {
+    const codeBlocks = [...document.getElementsByClassName('code-block')]
+    codeBlocks.forEach((element) => {
+      const innerText = element.firstChild
+      // eslint-disable-next-line no-param-reassign
+      // element.innerText = ''
+      window.RunKit.createNotebook({
+        element,
+        source: innerText.textContent,
+        onLoad: () => innerText.remove()
+      })
+    }, [])
+  }
+
+  function loadCodeblocks() {
+    console.log('here')
+    if (typeof window.RunKit === 'undefined') {
+      setTimeout(() => {
+        loadCodeblocks()
+      }, 200)
+    } else injectRunkit(0)
+  }
+
+  useEffect(() => {
+    loadCodeblocks()
+  }, [])
+
   return (
     <div>
       <Meta title={title} description={excerpt} ogImage={coverImage} />
+      <Head>
+        <script src="https://embed.runkit.com" defer />
+      </Head>
       <Button className="flex items-center mb-4" to="/">
         <HiOutlineArrowNarrowLeft />
         <p className="ml-2">Back</p>
@@ -19,8 +51,11 @@ export default function Post({ post, morePosts, preview }) {
       <div className="mb-paragraph flex justify-center">
         <img src={coverImage} alt={title} className="h-400 w-full object-cover" />
       </div>
-      <div className="markdown-body" dangerouslySetInnerHTML={{ __html: content }} />
-      {/* <div className="w-full text-center">Coming soon</div> */}
+      {published ? (
+        <div className="markdown-body" dangerouslySetInnerHTML={{ __html: content }} />
+      ) : (
+        <div className="w-full text-center">Coming soon</div>
+      )}
     </div>
   )
 }
@@ -33,6 +68,7 @@ export async function getStaticProps({ params }) {
     'content',
     'ogImage',
     'coverImage',
+    'published',
   ])
   const content = await markdownToHtml(post.content || '')
 

@@ -1,10 +1,11 @@
 ---
 title: 'WTF is "this"'
-excerpt: 'The keyword "this" is Javascript can get very tricky very quickly. Let us get "this" off our heads once and for all.'
+excerpt: 'The keyword "this" in Javascript can get very tricky very quickly. Let us get "this" off our heads once and for all.'
 coverImage: 'https://res.cloudinary.com/doxldod5y/image/upload/v1612336724/portfolio/posts/wtf-is-this/dgahV0czTwWJuwa9RcTE__E2_80_9CWhy_20_E2_80_98This_E2_80_99_20in_20JavaScript_E2_80_9D2x.png_jf7qgd.jpg'
 date: '2021-02-03T07:22:52.529Z'
 ogImage:
   url: 'https://res.cloudinary.com/doxldod5y/image/upload/v1612336724/portfolio/posts/wtf-is-this/dgahV0czTwWJuwa9RcTE__E2_80_9CWhy_20_E2_80_98This_E2_80_99_20in_20JavaScript_E2_80_9D2x.png_jf7qgd.jpg'
+published: true
 ---
 ## Understanding context and `this`
 
@@ -98,17 +99,21 @@ sayDavesName('JS', 'Python')
 
 ## 'new' Binding
 
-When a function is invoked with a `new` keyword the `this` keyword inside that function is bound to a new Object which is constructed.
+Functions that are called with `new` are called constructor function. The `this` keyword inside that function is bound to a new Object which is constructed. These three major steps happens when a function with new binding is called.
+
+- It creates a variable `this` and assigns the value to __{}__.
+- Then it assigns the `this` values and creates __a prototype that points to function itself__.
+- Finally, it returns the this pointer to the called function. (this value will be our new object out of constructor function).
 
 ```
 var Animal = function (name){
   this.name = name
 }
 
-var tiger = new Animal('tiger')
+var tiger = new Animal('Bagha')
+console.log(tiger.name) // OUTPUT: 'Bagha'
 ```
-
-Value of `this` inside the `Animal` function is equal to the new `tiger` object (which is of Animal type) which is created.
+calling new in front of `Animal`, we have constructed a new object and set that new object as the `this` for the call of Animal.
 
 ## 'window' Binding
 
