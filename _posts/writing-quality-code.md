@@ -8,11 +8,31 @@ ogImage:
   url: 'https://res.cloudinary.com/doxldod5y/image/upload/v1608581639/portfolio/posts/writing-quality-code/image-blog-what-code-quality_sw7ipk.jpg'
 ---
 
+We all love to be called coders 👩‍💻. But as one great man once said "*with great power comes great responsibility*" 🕷, poorly written code can result in a disasters of small to catastrophic proportions. For example,
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus. Praesent elementum facilisis leo vel fringilla. Congue mauris rhoncus aenean vel. Egestas sed tempus urna et pharetra pharetra massa massa ultricies.
+- **Space: Ariane 5** - On June 4 1996, A bug in the control software of the European Space Agency's Ariane 5 rocket, caused the rocket to self-destruct 37 seconds after blast-off.
+- **MySpace** - An unfortunate disaster recovery failure.
+- **AT&T** - Lost tens of millions because of a misplaced break statement.
 
-Venenatis cras sed felis eget velit. Consectetur libero id faucibus nisl tincidunt. Gravida in fermentum et sollicitudin ac orci phasellus egestas tellus. Volutpat consequat mauris nunc congue nisi vitae. Id aliquet risus feugiat in ante metus dictum at tempor. Sed blandit libero volutpat sed cras. Sed odio morbi quis commodo odio aenean sed adipiscing. Velit euismod in pellentesque massa placerat. Mi bibendum neque egestas congue quisque egestas diam in arcu. Nisi lacus sed viverra tellus in. Nibh cras pulvinar mattis nunc sed. Luctus accumsan tortor posuere ac ut consequat semper viverra. Fringilla ut morbi tincidunt augue interdum velit euismod.
+The list can go on and on... 
 
-## Lorem Ipsum
+I want to help you with what you need to write better code. Lets get started,
 
-Tristique senectus et netus et malesuada fames ac turpis. Ridiculous mus mauris vitae ultricies leo integer malesuada nunc vel. In mollis nunc sed id semper. Egestas tellus rutrum tellus pellentesque. Phasellus vestibulum lorem sed risus ultricies tristique nulla. Quis blandit turpis cursus in hac habitasse platea dictumst quisque. Eros donec ac odio tempor orci dapibus ultrices. Aliquam sem et tortor consequat id porta nibh. Adipiscing elit duis tristique sollicitudin nibh sit amet commodo nulla. Diam vulputate ut pharetra sit amet. Ut tellus elementum sagittis vitae et leo. Arcu non odio euismod lacinia at quis risus sed vulputate.
+> ### Prevention is better than cure 
+
+Most of the time we are running on a deadline. Be it your manager or a client, they will always want you to deliver in a tight schedule. So what do you do ? you work your a** off, sacrifice your weekends and deliver your code by the deadline.
+The result, a big ball of mud 🤯, the fast and dirty code.
+
+What if we actually go slower ? We will have sufficient time to find all the bugs and fix them in the development phase.
+The ideal way is to divide a module into multiple phases and follow an incremental process to complete the whole module. Taking each phase one at a time will help you find all the loopholes and breakage in the code and fix them before you can move on to the next phase.
+
+In this process we will come up with a lot of bug, we will have to go back and fix them, we will find needles in the haystack, so ultimately getting the work done takes longer. But this act of prevention can cause a lot better than the cure.
+
+![](https://res.cloudinary.com/doxldod5y/image/upload/w_500/v1609226531/portfolio/posts/writing-quality-code/Screenshot_2020-12-29_125140_tmf79x.png)
+
+In case you are wondering how to convince your manager to give you more time for your work, [follow the link here](https://coschedule.com/blog/convince-your-boss/).
+
+<br/>
+
+
+
