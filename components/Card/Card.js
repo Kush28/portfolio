@@ -14,7 +14,7 @@ export default function Card({ variant, title, desc, url, image }) {
       </div>
       <div className={twStyle.contentWrapper}>
         <h2 className={classNames(twStyle.title, css.title)}>{title}</h2>
-        <p className={twStyle.text}>{desc}</p>
+        <p className={classNames(twStyle.text, css.desc)}>{desc}</p>
         <p className={classNames(twStyle.arrow, css.arrow)}>
           <HiArrowNarrowRight size="2em" />
         </p>
