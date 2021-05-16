@@ -1,6 +1,6 @@
 module.exports = {
   default: {
-    wrapper: 'flex flex-col',
+    wrapper: 'flex flex-col mb-default sm:mb-0',
     imgWrapper: 'h-200 overflow-hidden rounded-md',
     img: 'h-full w-full object-cover transition duration-500 ease-in-out',
     contentWrapper: 'pt-paragraph relative flex-grow flex flex-col',
