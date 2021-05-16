@@ -1,0 +1,26 @@
+.enter {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+.enterActive {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 200ms ease-in-out, transform 200ms ease-in-out;
+}
+
+.enterDone {
+  background-color: rgba(52, 54, 51, 0.3);
+}
+
+.exit {
+  opacity: 1;
+  transform: translateX(0);
+  background-color: transparent;
+}
+
+.exitActive {
+  opacity: 0;
+  transform: translateX(100%);
+  transition: opacity 200ms ease-in-out, transform 200ms ease-in-out;
+}

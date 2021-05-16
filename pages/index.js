@@ -9,7 +9,7 @@ export default function Index({ allPosts }) {
   return (
     <div className="mt-2">
       <Meta />
-      <div className="mb-8">
+      <div className="mb-default">
         <h1>
           <p className="text-xl mb-2">Hi there!</p>
           <p className="text-sm ">Welcome to my world. Here are some interesting things for you.</p>
