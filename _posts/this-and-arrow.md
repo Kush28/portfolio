@@ -40,7 +40,7 @@ Now, What does last point mean. Well it simply means that arrow functions do not
 
 Let's understand this by an example,
 
-<div class="code-block">
+```
 var obj = {
   getObj: function(){
     console.log(this)
@@ -51,8 +51,7 @@ var obj = {
 }
 obj.getObj() // Obj
 obj.getGlobal()// Global
-</div>
-</br>
+```
 
 In the above example `getObj` and `getGlobal` are the same functions. However the output of the functions are different.
 
@@ -64,7 +63,7 @@ But `getGlobal()` is an arrow function, from our previous understanding we know,
 
 ### Lets check some advantages arrow functions has,
 
-<div class="code-block">
+```
 var obj = {
   a:10,
   getA: function outer(){
@@ -75,7 +74,7 @@ var obj = {
 }
 var fun = obj.getA()
 fun() // undefined
-</div>
+```
 </br>
 
 If you thought `this` in `inner` function refers to `obj` then you are not alone. This is this kind of scenarios where we get scared by the `this` keyword.
@@ -84,7 +83,7 @@ This is a special case where the function `fun()` is a [closure](https://develop
 
 To fix this we can change the function to a arrow function,
 
-<div class="code-block">
+```
 var obj = {
   a:10,
   getA: function outer(){
@@ -95,7 +94,7 @@ var obj = {
 }
 var fun = obj.getA()
 fun()
-</div>
+```
 </br>
 
 **Magic !! 😵**

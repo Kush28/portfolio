@@ -6,11 +6,13 @@ import Head from 'next/head'
 import { getPostBySlug, getAllPosts } from '../../lib/api'
 import markdownToHtml from '../../lib/markdownToHtml'
 
-export default function Post({ post, morePosts, preview }) {
+export default function Post({ post }) {
   const { title, content, coverImage, excerpt, published } = post
 
   function injectRunkit() {
-    const codeBlocks = [...document.getElementsByClassName('code-block')]
+    const codeBlocks = [...document.getElementsByTagName('pre')].map(
+      (pre) => pre.children && pre.children[0],
+    )
     codeBlocks.forEach((element) => {
       const innerText = element.firstChild
       // eslint-disable-next-line no-param-reassign
@@ -18,7 +20,7 @@ export default function Post({ post, morePosts, preview }) {
       window.RunKit.createNotebook({
         element,
         source: innerText.textContent,
-        onLoad: () => innerText.remove()
+        onLoad: () => innerText.remove(),
       })
     }, [])
   }

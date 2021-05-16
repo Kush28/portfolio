@@ -36,10 +36,11 @@ Let's try to find the context in which the function `sayName()` is executed.
 
 The easiest way to do that is to __check if the function invocation is preceded by a dot (.)__. If __yes__, then the value of `this` inside the function `sayName()` is equal to the object before the dot. Which is `obj`.
 so,
-```
-this = obj
-obj.name => 'Dave'
-```
+
+> this = obj
+> 
+> obj.name => 'Dave'
+
 
 ## Explicit Binding
 
@@ -55,8 +56,8 @@ For example,
 
 ```
 function sayName(lang1, lang2) {
-  console.log("My name is ", this.name);
-  console.log("I know ", lang1, lang2);
+  console.log("My name is " + this.name);
+  console.log("I know " + lang1 + lang2);
 }
 
 var dave = {
@@ -67,16 +68,27 @@ var dave = {
 sayName.call(dave, 'JS', 'Python') // 1st argument is the context in which the function will be executed, Next are arguments sent to the function call
 ```
 Output
-```
-My name is Dave
-I know JS Python
-```
+
+> My name is Dave
+> 
+> I know JS Python
+
 
 `call()` and `apply()` serve the __exact same purpose__. The only difference between how they work is that `call()` expects all parameters to be passed in individually, whereas `apply()` expects an array of all of our parameters. 
 
 For example, both produces the same output,  
 
 ```
+function sayName(lang1, lang2) {
+  console.log("My name is " + this.name);
+  console.log("I know " + lang1 + lang2);
+}
+
+var dave = {
+  name: "Dave",
+  age: 25,
+};
+
 sayName.call(dave, 'JS', 'Python')
 sayName.apply(dave, ['JS', 'Python'])
 
@@ -93,6 +105,16 @@ The difference between `call()`, `apply()` and `bind()` is that the `bind()` met
 For example the below code produces the same output as the above example.
 
 ```
+function sayName(lang1, lang2) {
+  console.log("My name is " + this.name);
+  console.log("I know " + lang1 + lang2);
+}
+
+var dave = {
+  name: "Dave",
+  age: 25,
+};
+
 var sayDavesName = sayName.bind(dave)
 sayDavesName('JS', 'Python')
 ```
@@ -133,7 +155,7 @@ function sayName(){
 
 sayName() // OUTPUT => undefined
 
-window.name = 'Dave'
+var name = 'Dave'
 sayName() // OUTPUT => 'Dave'
 ```
 
