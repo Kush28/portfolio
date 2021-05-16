@@ -24,7 +24,7 @@ export default function Index({ allPosts }) {
           image={featuredPost.coverImage}
         />
       </div>
-      <div className="grid grid-cols-2 gap-14">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-14">
         {allPosts.map(
           (post, index) =>
             index !== 0 && (

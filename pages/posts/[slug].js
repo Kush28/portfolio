@@ -24,7 +24,6 @@ export default function Post({ post, morePosts, preview }) {
   }
 
   function loadCodeblocks() {
-    console.log('here')
     if (typeof window.RunKit === 'undefined') {
       setTimeout(() => {
         loadCodeblocks()
