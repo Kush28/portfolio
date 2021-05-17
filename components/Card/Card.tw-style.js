@@ -10,7 +10,7 @@ module.exports = {
   },
   featured: {
     wrapper: 'flex flex-col sm:flex-row',
-    imgWrapper: 'h-200 sm:w-1/2 overflow-hidden rounded-md',
+    imgWrapper: 'h-200 md:h-250 lg:h-300 sm:w-1/2 overflow-hidden rounded-md',
     img: 'h-full w-full object-cover transition duration-500 ease-in-out',
     contentWrapper: 'sm:w-1/2 pt-paragraph sm:pt-0 sm:px-paragraph ',
     title: 'text-xl md:text-2xl mb-paragraph',

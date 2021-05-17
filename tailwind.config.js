@@ -32,6 +32,7 @@ module.exports = {
         item: '0.625rem',
         avatar: '75px',
         200: '200px',
+        250: '250px',
         100: '100px',
         300: '300px',
       },
