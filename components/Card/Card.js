@@ -15,7 +15,7 @@ export default function Card({ variant, title, desc, url, image }) {
   return (
     <Button to={url} className={classNames(twStyle.wrapper, css.cardWrapper)}>
       <div className={twStyle.imgWrapper}>
-        <img className={twStyle.img} alt={title} src={image} />
+        <img className={twStyle.img} alt={title} src={image} loading="lazy" />
       </div>
       <div className={twStyle.contentWrapper}>
         <h2 className={classNames(twStyle.title, css.title)}>{title}</h2>

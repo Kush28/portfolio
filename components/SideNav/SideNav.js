@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from '../Image/Image'
 import Badge from '../Badge/Badge'
 import Footer from '../Footer/Footer'
 
@@ -6,8 +7,8 @@ export default function SideNav() {
   return (
     <div className="flex flex-col" id="side-nav">
       <div className="flex justify-end">
-        <div className="rounded-full overflow-hidden">
-          <img src="/assets/avatar.jpg" className="h-avatar" alt="kushal avatar" />
+        <div className="rounded-full overflow-hidden h-avatar">
+          <Image src="/assets/avatar.jpg" height={75} width={75} alt="Kushal Mukherjee" />
         </div>
       </div>
       <div className="mb-default text-md">
