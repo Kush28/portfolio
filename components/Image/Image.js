@@ -1,9 +1,8 @@
 import React from 'react'
 import PropTypes, { number, string } from 'prop-types'
-import MImage from 'next/image'
 
 export default function Image({ src, height, width, alt, className }) {
-  return <MImage src={src} className={className} height={height} width={width} alt={alt} />
+  return <img src={src} className={className} height={height} width={width} alt={alt} />
 }
 
 Image.propTypes = {
