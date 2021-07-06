@@ -8,7 +8,12 @@ export default function SideNav() {
     <div className="flex flex-col" id="side-nav">
       <div className="flex justify-end">
         <div className="rounded-full overflow-hidden h-avatar">
-          <Image src="/assets/avatar.jpg" height={75} width={75} alt="Kushal Mukherjee" />
+          <Image
+            src="https://res.cloudinary.com/doxldod5y/image/upload/w_200/v1597945291/portfolio/avatar_atghbi.jpg"
+            height={75}
+            width={75}
+            alt="Kushal Mukherjee"
+          />
         </div>
       </div>
       <div className="mb-default text-md">
