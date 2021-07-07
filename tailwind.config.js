@@ -14,6 +14,10 @@ module.exports = {
         xl: '6rem',
       },
     },
+    fontFamily: {
+      lato: 'Lato',
+      lora: 'Lora',
+    },
     extend: {
       screens: {},
       colors: {

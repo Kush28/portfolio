@@ -1,51 +1,87 @@
-# A statically generated blog example using Next.js and Markdown
+## Table of Contents
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fj0lv3r4%2Fjolvera.dev.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fj0lv3r4%2Fjolvera.dev?ref=badge_shield)
 
-This example showcases Next.js's [Static Generation](https://nextjs.org/docs/basic-features/pages) feature using markdown files as the data source.
 
-The blog posts are stored in `/_posts` as markdown files with front matter support. Adding a new markdown file in there will create a new blog post.
+- [Table of Contents](#table-of-contents)
+- [Folder Structure](#folder-structure)
+- [Available Scripts](#available-scripts)
+  - [`npm run dev`](#npm-run-dev)
+  - [`npm run build`](#npm-run-build)
+  - [`npm run start`](#npm-run-start)
+- [Using CSS](#using-css)
 
-To create the blog posts we use [`remark`](https://github.com/remarkjs/remark) and [`remark-html`](https://github.com/remarkjs/remark-html) to convert the markdown files into an HTML string, and then send it down as a prop to the page. The metadata of every post is handled by [`gray-matter`](https://github.com/jonschlinkert/gray-matter) and also sent in props to the page.
+## Folder Structure
 
-## Demo
+After creating an app, it should look something like:
 
-[https://next-blog-starter.now.sh/](https://next-blog-starter.now.sh/)
-
-## Deploy your own
-
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/git?c=1&s=https://github.com/vercel/next.js/tree/canary/examples/blog-starter)
-
-### Related examples
-
-- [WordPress](/examples/cms-wordpress)
-- [DatoCMS](/examples/cms-datocms)
-- [Sanity](/examples/cms-sanity)
-- [TakeShape](/examples/cms-takeshape)
-- [Prismic](/examples/cms-prismic)
-- [Contentful](/examples/cms-contentful)
-- [Strapi](/examples/cms-strapi)
-- [Agility CMS](/examples/cms-agilitycms)
-- [Cosmic](/examples/cms-cosmic)
-- [ButterCMS](/examples/cms-buttercms)
-- [Storyblok](/examples/cms-storyblok)
-- [GraphCMS](/examples/cms-graphcms)
-- [Kontent](/examples/cms-kontent)
-
-## How to use
-
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
-
-```bash
-npx create-next-app --example blog-starter blog-starter-app
-# or
-yarn create next-app --example blog-starter blog-starter-app
+```
+.
+├── README.md
+├── components
+│   ├── head.js
+│   └── nav.js
+├── next.config.js
+├── node_modules
+│   ├── [...]
+├── package.json
+├── pages
+│   └── index.js
+├── static
+│   └── favicon.ico
+└── yarn.lock
 ```
 
-Your blog should be up and running on [http://localhost:3000](http://localhost:3000)! If it doesn't work, post on [GitHub discussions](https://github.com/vercel/next.js/discussions).
+Routing in Next.js is based on the file system, so `./pages/index.js` maps to the `/` route and
+`./pages/about.js` would map to `/about`.
 
-Deploy it to the cloud with [Vercel](https://vercel.com/import?filter=next.js&utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+The `./static` directory maps to `/static` in the `next` server, so you can put all your
+other static resources like images or compiled CSS in there.
 
-# Notes
+Out of the box, we get:
 
-This blog-starter uses [Tailwind CSS](https://tailwindcss.com). To control the generated stylesheet's filesize, this example uses Tailwind CSS' v1.4 [`purge` option](https://tailwindcss.com/docs/controlling-file-size/#removing-unused-css) to remove unused CSS.
+- Automatic transpilation and bundling (with webpack and babel)
+- Hot code reloading
+- Server rendering and indexing of `./pages`
+- Static file serving. `./static/` is mapped to `/static/`
+
+Read more about [Next's Routing](https://github.com/zeit/next.js#routing)
+
+## Available Scripts
+
+In the project directory, you can run:
+
+### `npm run dev`
+
+Runs the app in the development mode.<br>
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+The page will reload if you make edits.<br>
+You will also see any errors in the console.
+
+### `npm run build`
+
+Builds the app for production to the `.next` folder.<br>
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+### `npm run start`
+
+Starts the application in production mode.
+The application should be compiled with \`next build\` first.
+
+See the section in Next docs about [deployment](https://github.com/zeit/next.js/wiki/Deployment) for more information.
+
+## Using CSS
+
+[`tailwind`](https://tailwindcss.com/) is a utility-first CSS framework. We are using tailwind along with [`postcss`](https://github.com/postcss/postcss).
+
+```jsx
+export default () => (
+  <div>
+    Hello world
+    <p className="flex-auto text-xl font-semibold">scoped!</p>
+  </div>
+)
+```
+
+Read more about [Next's CSS features](https://github.com/zeit/next.js#css).
+
