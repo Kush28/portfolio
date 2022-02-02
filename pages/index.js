@@ -1,7 +1,9 @@
+import Project from '@/components/Project'
 import React from 'react'
 import Card from '../components/Card/Card'
 import Meta from '../components/Meta/Meta'
 import { getAllPosts } from '../lib/api'
+import projects from '../lib/projects'
 
 export default function Index({ allPosts }) {
   const featuredPost = allPosts[0]
@@ -16,6 +18,7 @@ export default function Index({ allPosts }) {
         </h1>
       </div>
       <div className="mb-default">
+        <h2 className="mb-default text-2xl">Blog</h2>
         <Card
           variant="featured"
           title={featuredPost.title}
@@ -24,7 +27,7 @@ export default function Index({ allPosts }) {
           image={featuredPost.coverImage}
         />
       </div>
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-14">
+      <div className="mb-default grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-14">
         {allPosts.map(
           (post, index) =>
             index !== 0 && (
@@ -37,6 +40,21 @@ export default function Index({ allPosts }) {
               />
             ),
         )}
+      </div>
+      <div className="mb-default">
+        <h2 className="mb-default text-2xl">My Projects</h2>
+        <div className="grid md:grid-cols-2 gap-4">
+          {projects &&
+            projects.map(({ image, title, githubUrl, hostedUrl }) => (
+              <Project
+                key={title}
+                image={image}
+                title={title}
+                githubUrl={githubUrl}
+                hostedUrl={hostedUrl}
+              />
+            ))}
+        </div>
       </div>
     </div>
   )

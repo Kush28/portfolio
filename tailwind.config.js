@@ -17,6 +17,7 @@ module.exports = {
     fontFamily: {
       lato: 'Lato',
       lora: 'Lora',
+      playfair: 'Playfair Display',
     },
     extend: {
       screens: {},
@@ -46,6 +47,7 @@ module.exports = {
       boxShadow: {
         small: '0 5px 10px rgba(0, 0, 0, 0.12)',
         medium: '0 8px 30px rgba(0, 0, 0, 0.12)',
+        large: '0 3px 6px rgb(0 0 0 / 16%), 0 3px 6px rgb(0 0 0 / 23%)',
       },
       minHeight: {
         200: '200px',

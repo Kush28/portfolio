@@ -8,7 +8,7 @@ export default function Image({ src, height, width, alt, className }) {
 Image.propTypes = {
   src: PropTypes.string.isRequired,
   height: PropTypes.oneOfType([number, string]),
-  width: PropTypes.number,
+  width: PropTypes.oneOfType([number, string]),
   alt: PropTypes.string.isRequired,
   className: PropTypes.string,
 }

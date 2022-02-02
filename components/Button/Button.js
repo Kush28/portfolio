@@ -2,11 +2,13 @@
 import Link from 'next/link'
 import React from 'react'
 
-export default function Button({ to, children, className, onClick }) {
+export default function Button({ to, children, className, onClick, target = '_self' }) {
   if (to)
     return (
       <Link href={to}>
-        <a className={className}>{children}</a>
+        <a className={className} target={target}>
+          {children}
+        </a>
       </Link>
     )
 
